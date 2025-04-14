@@ -1,0 +1,19 @@
+<h2>Place Order</h2>
+
+<form method="post">
+  {% csrf_token %}
+
+  <label>Select Address:</label><br>
+  {% for addr in addresses %}
+    <input type="radio" name="address" value="{{ addr.id }}" required>
+    {{ addr.address_line }}, {{ addr.city }}<br>
+  {% endfor %}
+
+  <label>Select Payment Method:</label><br>
+  {% for pm in payment_methods %}
+    <input type="radio" name="payment_method" value="{{ pm.id }}" required>
+    {{ pm.get_method_display }}<br>
+  {% endfor %}
+
+  <button type="submit">Confirm Order</button>
+</form>

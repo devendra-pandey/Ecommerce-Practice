@@ -1,0 +1,8 @@
+<h2>My Saved Addresses</h2>
+{% for addr in addresses %}
+  <p>{{ addr.address_line }}, {{ addr.city }}, {{ addr.state }}, {{ addr.country }} - {{ addr.postal_code }}</p>
+{% empty %}
+  <p>No addresses yet.</p>
+{% endfor %}
+
+<a href="{% url 'add_address' %}">Add New Address</a>

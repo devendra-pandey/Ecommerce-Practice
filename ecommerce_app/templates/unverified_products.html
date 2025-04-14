@@ -1,0 +1,10 @@
+<h2>Unverified Products</h2>
+
+{% for product in products %}
+  <div>
+    <p><strong>{{ product.name }}</strong> – ₹{{ product.price }}</p>
+    <a href="{% url 'verify_product' product.pk %}">Approve</a>
+  </div>
+{% empty %}
+  <p>No products pending approval.</p>
+{% endfor %}

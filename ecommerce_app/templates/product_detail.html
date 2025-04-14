@@ -1,0 +1,8 @@
+<h2>{{ product.name }}</h2>
+<img src="{{ product.image.url }}" width="200">
+<p>Price: ₹{{ product.price }}</p>
+<p>Stock: {{ product.stock }}</p>
+{% if user.is_authenticated %}
+  <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+{% endif %}
+<a href="{% url 'product_list' %}">Back to Products</a>

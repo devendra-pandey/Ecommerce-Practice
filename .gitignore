@@ -1,0 +1,10 @@
+# Django migrations
+*/migrations/
+*/migrations/*.py
+*/migrations/*.pyc
+
+# SQL files
+*.sql
+
+# SQLite database
+db.sqlite3

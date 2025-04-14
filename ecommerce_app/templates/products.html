@@ -1,0 +1,14 @@
+<h2>Products</h2>
+{% for product in products %}
+  <div>
+    <h4>{{ product.name }}</h4>
+    <p>₹{{ product.price }}</p>
+    <a href="{% url 'add_to_cart' product.id %}">Add to Cart</a>
+  </div>
+{% endfor %}
+{% if user.is_authenticated and user.customer.role in "VENDOR ADMIN" %}
+    <a href="{% url 'add_product' %}">Add Product</a>
+{% endif %}
+
+
+<a href="{% url 'cart' %}">View Cart</a>

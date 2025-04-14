@@ -1,0 +1,19 @@
+<h2>Your Cart</h2>
+
+{% for item in cart.items.all %}
+  <div>
+    <p>{{ item.product.name }} – ₹{{ item.product.price }} × {{ item.quantity }}</p>
+
+    <form method="post" action="{% url 'update_cart' item.id %}">
+      {% csrf_token %}
+      <input type="number" name="quantity" value="{{ item.quantity }}">
+      <button type="submit">Update</button>
+    </form>
+
+    <a href="{% url 'remove_from_cart' item.id %}">Remove</a>
+  </div>
+{% empty %}
+  <p>Your cart is empty.</p>
+{% endfor %}
+
+<a href="{% url 'place_order' %}">Place Order</a>
