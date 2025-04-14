@@ -86,6 +86,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce_project.wsgi.application'
 
+CSRF_FAILURE_VIEW = 'django.views.csrf.csrf_failure'
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

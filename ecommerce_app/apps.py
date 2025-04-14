@@ -7,7 +7,5 @@ class EcommerceAppConfig(AppConfig):
 
 
     def ready(self):
-        import ecommerce_app.dash_apps.sales_dashboard
-
-    def ready(self):
         import ecommerce_app.signals
+        import ecommerce_app.dash_apps.admin_dashboard

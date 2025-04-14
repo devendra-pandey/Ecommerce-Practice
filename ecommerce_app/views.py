@@ -228,4 +228,4 @@ def add_address(request):
 @login_required
 def my_addresses(request):
     addresses = CustomerAddress.objects.filter(customer=request.user.customer)
-    return render(request, 'my_addresses.html', {'addresses': addresses})
+    return render(request, 'my_address.html', {'addresses': addresses})
